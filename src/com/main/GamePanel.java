@@ -25,16 +25,29 @@ public class GamePanel extends JPanel {
 
     public GamePanel(){
         this(new Game(defaultWordsPath));
-
     }
 
     public GamePanel(Game loadGame){
+        System.out.println("GamePAnel loading game");
         currentGame = loadGame;
         initGame();
-
         initPanel();
     }
 
+    public void initGame(){
+
+        System.out.println("init game");
+        System.out.println(currentGame.getBgColor());
+
+        //check if the new game is loaded not an actual new game
+        if(currentGame.getWord() == null)
+            currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
+
+        this.setBackground(currentGame.getBgColor());
+
+        this.revalidate();
+        this.repaint();
+    }
 
     public void initPanel(){
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -48,13 +61,6 @@ public class GamePanel extends JPanel {
         this.add(new LettersPanel());
         this.add(new AnswerPanel());
         this.add(new ChancesPanel());
-    }
-    public void initGame(){
-        if(currentGame.getWord() == null)
-            currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
-
-        this.revalidate();
-        this.repaint();
     }
 
     private String getRandomWord(String path){

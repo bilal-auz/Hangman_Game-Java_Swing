@@ -42,7 +42,7 @@ public class GameMenuBar extends JMenuBar {
             this.setText(menuTitle);
 
             for(String title: optionsMenuItems){
-                this.add(new OptionGameItem());
+                this.add(new OptionGameItem(parentFrame, parentPanel));
             };
         }
     }

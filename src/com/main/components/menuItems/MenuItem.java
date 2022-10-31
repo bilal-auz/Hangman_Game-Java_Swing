@@ -39,7 +39,7 @@ abstract public class MenuItem extends JMenuItem implements ActionListener {
 
         newGameFileChooser.setAcceptAllFileFilterUsed(false);
         newGameFileChooser.setFileFilter(
-                new FileNameExtensionFilter(".sav", extensions)
+                new FileNameExtensionFilter("."+extensions[0], extensions)
         );
 
         newGameFileChooser.setDialogTitle(title + " Game");
@@ -50,13 +50,13 @@ abstract public class MenuItem extends JMenuItem implements ActionListener {
         if(status == JFileChooser.APPROVE_OPTION){
             selectedFilePath = newGameFileChooser.getSelectedFile().getAbsolutePath();
 
-            if(!selectedFilePath.endsWith(".sav")){
-                selectedFile = new File(selectedFilePath+"."+"sav");
+            if(!selectedFilePath.endsWith(extensions[0])){
+                selectedFile = new File(selectedFilePath+"."+extensions[0]);
             }else{
                 selectedFile = new File(selectedFilePath);
             }
 
-            System.out.print("saving file: " + selectedFile.getName());
+//            System.out.print("saving file: " + selectedFile.getName());
 
             return selectedFile;
         }else if(status == JFileChooser.CANCEL_OPTION){

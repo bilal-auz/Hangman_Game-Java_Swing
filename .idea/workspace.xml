@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f89ef71a-7e56-4ccd-9f05-aaca364b02bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/GameMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/GameMenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/GameMenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/ExitGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/ExitGameItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/LoadGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/LoadGameItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/SaveGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/SaveGameItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/AnswerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/AnswerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/ChancesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/ChancesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/LettersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/LettersPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/WordPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/WordPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/OptionGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/OptionGameItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +37,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/belal/Desktop/Study/CIU/S1/Java/HW1/Hangman_Game&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;file.status.colors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/belal/IdeaProjects/FinalJavaBilal",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "file.status.colors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.main" />
@@ -89,7 +83,7 @@
       <updated>1667034219147</updated>
       <workItem from="1667034220523" duration="39910000" />
       <workItem from="1667148206209" duration="2607000" />
-      <workItem from="1667199651935" duration="8644000" />
+      <workItem from="1667199651935" duration="20131000" />
     </task>
     <servers />
   </component>

@@ -10,15 +10,19 @@ public class Game implements Serializable {
     private String word;
     private int chances;
     private ArrayList chosenLetters = new ArrayList();
-    private Color bgColor = Color.white;
+    private Color bgColor = Color.WHITE;
     private String wordListLocation = null;
 
-    public Game(String wordListLocation){
-//        this.word = word;
-//        chances = (word.length() / 2);
-
+    public Game(Color bgColor, String wordListLocation){
+        this.bgColor = bgColor;
         this.wordListLocation = wordListLocation;
     }
+
+    //should only be one game(Object)
+    public Game(String wordListLocation){
+        this(Color.WHITE, wordListLocation);
+    }
+
 
 
     public static void serialize(File selectedFile) throws Exception {

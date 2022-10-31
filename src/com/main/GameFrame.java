@@ -7,6 +7,7 @@ import javax.swing.*;
 import com.main.components.Game;
 import com.main.components.GameMenuBar;
 
+import java.awt.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
