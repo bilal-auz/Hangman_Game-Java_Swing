@@ -9,7 +9,7 @@ public class WordPanel extends JPanel {
         labels = new JLabel[wordLength];
 
         this.setPreferredSize(new Dimension(100, 100));
-        this.setBackground(Color.RED);
+//        this.setBackground(Color.RED);
         this.setLayout(new FlowLayout());
 
         for (JLabel label:labels){

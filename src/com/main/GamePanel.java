@@ -20,7 +20,7 @@ public class GamePanel extends JPanel {
 
     private static final int SCREEN_WIDTH = 750;
     private static final int SCREEN_HEIGHT = 300;
-    public Game currentGame;
+    private static Game currentGame;
     private static final String defaultWordsPath = "src/words.db";
 
     public GamePanel(){
@@ -31,6 +31,7 @@ public class GamePanel extends JPanel {
     public GamePanel(Game loadGame){
         currentGame = loadGame;
         initGame();
+
         initPanel();
     }
 
@@ -49,7 +50,9 @@ public class GamePanel extends JPanel {
         this.add(new ChancesPanel());
     }
     public void initGame(){
-        currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
+        if(currentGame.getWord() == null)
+            currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
+
         this.revalidate();
         this.repaint();
     }
@@ -66,4 +69,17 @@ public class GamePanel extends JPanel {
         }
     }
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game newCurrentGame){
+        currentGame = newCurrentGame;
+    }
+
+    public void refreshPanel(){
+        this.validate();
+        this.repaint();
+
+    }
 }

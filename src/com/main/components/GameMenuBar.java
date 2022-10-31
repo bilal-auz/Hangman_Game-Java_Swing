@@ -1,8 +1,6 @@
 package com.main.components;
 
-import com.main.components.menuItems.LoadGameItem;
-import com.main.components.menuItems.NewGameItem;
-import com.main.components.menuItems.SaveGameItem;
+import com.main.components.menuItems.*;
 
 import javax.swing.*;
 import java.io.File;
@@ -32,8 +30,9 @@ public class GameMenuBar extends JMenuBar {
 //            }
 
             this.add(new NewGameItem("New Game", parentFrame, parentPanel));
-            this.add(new SaveGameItem("Save Game"));
-            this.add(new LoadGameItem("Load Game"));
+            this.add(new SaveGameItem("Save Game", parentFrame, parentPanel));
+            this.add(new LoadGameItem("Load Game", parentFrame, parentPanel));
+            this.add(new ExitGameItem("Exit Game"));
         }
     }
 
@@ -43,7 +42,7 @@ public class GameMenuBar extends JMenuBar {
             this.setText(menuTitle);
 
             for(String title: optionsMenuItems){
-                this.add(new JMenuItem(title));
+                this.add(new OptionGameItem());
             };
         }
     }
