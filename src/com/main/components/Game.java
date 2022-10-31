@@ -5,6 +5,7 @@ import com.main.GamePanel;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game implements Serializable {
     private String word;
@@ -12,6 +13,8 @@ public class Game implements Serializable {
     private ArrayList chosenLetters = new ArrayList();
     private Color bgColor = Color.WHITE;
     private String wordListLocation = null;
+
+    private HashMap<Integer, String> selectedLetters = new HashMap<>();
 
     public Game(Color bgColor, String wordListLocation){
         this.bgColor = bgColor;
@@ -97,4 +100,20 @@ public class Game implements Serializable {
     public void setWordListLocation(String wordListLocation) {
         this.wordListLocation = wordListLocation;
     }
+
+    public HashMap<Integer, String> getSelectedLetters() {
+        return selectedLetters;
+    }
+
+    public void setSelectedLetters(HashMap<Integer, String> selectedLetters) {
+        this.selectedLetters = selectedLetters;
+    }
+
+//    public ArrayList<Integer> getSelectedLetters() {
+//        return selectedLetters;
+//    }
+//
+//    public void setSelectedLetters(ArrayList<Integer> selectedLetters) {
+//        this.selectedLetters = selectedLetters;
+//    }
 }

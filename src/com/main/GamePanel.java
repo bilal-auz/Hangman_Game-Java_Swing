@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class GamePanel extends JPanel {
 
-    private static final int SCREEN_WIDTH = 750;
+    private static final int SCREEN_WIDTH = 720;
     private static final int SCREEN_HEIGHT = 300;
     private static Game currentGame;
     private static final String defaultWordsPath = "src/words.db";
@@ -43,6 +43,8 @@ public class GamePanel extends JPanel {
         if(currentGame.getWord() == null)
             currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
 
+        currentGame.setChances(currentGame.getWord().length()/2);
+
         this.setBackground(currentGame.getBgColor());
 
         this.revalidate();
@@ -57,10 +59,10 @@ public class GamePanel extends JPanel {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         //pass to each panel the data from the current Game object
-        this.add(new WordPanel(currentGame.getWord().length()));
+        this.add(new WordPanel(currentGame.getWord(), currentGame.getWord().length()));
         this.add(new LettersPanel());
         this.add(new AnswerPanel());
-        this.add(new ChancesPanel());
+        this.add(new ChancesPanel(currentGame.getChances()));
     }
 
     private String getRandomWord(String path){
