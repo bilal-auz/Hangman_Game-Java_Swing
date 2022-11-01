@@ -9,8 +9,6 @@ import com.main.components.panels.WordPanel;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -18,34 +16,45 @@ import java.util.Random;
 
 public class GamePanel extends JPanel {
 
+    //panel WIDTH
     private static final int SCREEN_WIDTH = 720;
+    //panel HEIGHT
     private static final int SCREEN_HEIGHT = 300;
+    //panel Current Game
     private static Game currentGame;
+    //Default path to the Words (.db)
     private static final String defaultWordsPath = "src/words.db";
 
+    //1st constructor for a new game
     public GamePanel(){
+        //create new Game and pass it to the other constructor
         this(new Game(defaultWordsPath));
     }
 
+    //2nd constructor for loading games
     public GamePanel(Game loadGame){
-        System.out.println("GamePAnel loading game");
+        System.out.println("GamePanel loading game");
         currentGame = loadGame;
+
         initGame();
         initPanel();
     }
 
     public void initGame(){
-
         System.out.println("init game");
-        System.out.println(currentGame.getBgColor());
 
-        //check if the new game is loaded not an actual new game
-        if(currentGame.getWord() == null)
+        //check if the Game instance is a loaded Game and not a new game (new game word is NULL)
+        if(currentGame.getWord() == null){
+            // Calling getRandomWord method, and pass path to the words.db file of that game.
             currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
-
-        System.out.println("LOADING chanced: "+currentGame.getChances());
-        if(currentGame.getChances() <= 0)
+            //setting chances
             currentGame.setChances(currentGame.getWord().length()/2);
+        }
+
+//        //default chances of a non initialized new game is zero
+//        if(currentGame.getChances() <= 0)
+//            currentGame.setChances(currentGame.getWord().length()/2);
+
 
         this.setBackground(currentGame.getBgColor());
 
@@ -56,12 +65,14 @@ public class GamePanel extends JPanel {
     public void initPanel(){
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBorder(new EmptyBorder(10, 10,10,10));
-        this.setFocusable(true);
-
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        //pass to each panel the data from the current Game object
+        this.setFocusable(true);
+
+        //Pass to WordPanel the data of the current Game object.
         this.add(new WordPanel(currentGame.getWord(), currentGame.getWord().length()));
+
+        //other panels access the current game object directly through GamePanel.getCurrentGame()
         this.add(new LettersPanel());
         this.add(new AnswerPanel());
         this.add(new ChancesPanel());
@@ -83,13 +94,13 @@ public class GamePanel extends JPanel {
         return currentGame;
     }
 
-    public static void setCurrentGame(Game newCurrentGame){
-        currentGame = newCurrentGame;
-    }
-
-    public void refreshPanel(){
-        this.validate();
-        this.repaint();
-
-    }
+//    public static void setCurrentGame(Game newCurrentGame){
+//        currentGame = newCurrentGame;
+//    }
+//
+//    public void refreshPanel(){
+//        this.validate();
+//        this.repaint();
+//
+//    }
 }

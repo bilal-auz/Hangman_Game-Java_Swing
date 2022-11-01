@@ -1,31 +1,25 @@
 package com.main;
 
-
-
 import javax.swing.*;
 
-import com.main.components.Game;
 import com.main.components.GameMenuBar;
 
-import java.awt.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Random;
-
-
 public class GameFrame extends JFrame {
+
+    //Frame Title
     private static String FRAME_TITLE = "Hangman";
-    public Game currentGame;
-    private final String defaultWordsPath = "src/words.db";
+//    public Game currentGame;
+//    private final String defaultWordsPath = "src/words.db";
 
 
     public GameFrame(){
 
+        //init+add the panel to the frame
         JPanel parentPanel = new GamePanel();
-
         this.add(parentPanel);
-        this.setJMenuBar(new GameMenuBar(this,parentPanel ));
+
+        // set MenuBar
+        this.setJMenuBar(new GameMenuBar(this,parentPanel));
 
         this.setTitle(FRAME_TITLE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

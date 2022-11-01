@@ -8,20 +8,18 @@ import java.io.File;
 
 
 public class SaveGameItem extends MenuItem {
-
     JFrame parentFrame;
-    JPanel parentPanel;
+    private static final String[] extensions = {"sav"};
 
-    private static String[] extensions = {"sav"};
-    public SaveGameItem(String title , JFrame parentFrame, JPanel parentPanel){
+    public SaveGameItem(String title , JFrame parentFrame){
         this.parentFrame = parentFrame;
-        this.parentPanel = parentPanel;
-
         this.setText(title);
         this.addActionListener(this);
     }
 
-    public void open(){
+    //Save(serialize) the current game instance;
+    public void implementation(){
+        //get the desired location(where to save the game object)
         File selectedFile = openFileChooser("Save", extensions);
 
         //Serialization
@@ -30,20 +28,5 @@ public class SaveGameItem extends MenuItem {
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-
-
-//        try {
-//            FileOutputStream gameFile = new FileOutputStream(selectedFile + "." + extensions[0]);
-//            ObjectOutputStream objReader = new ObjectOutputStream(gameFile);
-//
-//            Game currentGameObject = GamePanel.getCurrentGame();
-//
-////                current game object
-//                objReader.writeObject(currentGameObject);
-//
-//            objReader.close();
-//        }catch (Exception e){
-//            JOptionPane.showMessageDialog(null, e.getMessage());
-//        }
     }
 }
