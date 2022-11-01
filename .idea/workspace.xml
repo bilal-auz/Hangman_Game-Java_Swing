@@ -4,7 +4,6 @@
     <list default="true" id="f89ef71a-7e56-4ccd-9f05-aaca364b02bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/components/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/AnswerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/AnswerPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/ChancesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/ChancesPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/LettersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/LettersPanel.java" afterDir="false" />
@@ -83,7 +82,7 @@
       <updated>1667034219147</updated>
       <workItem from="1667034220523" duration="39910000" />
       <workItem from="1667148206209" duration="2607000" />
-      <workItem from="1667199651935" duration="35113000" />
+      <workItem from="1667199651935" duration="41125000" />
     </task>
     <servers />
   </component>

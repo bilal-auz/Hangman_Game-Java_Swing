@@ -46,11 +46,6 @@ public class WordPanel extends JPanel {
 
             GamePanel.getCurrentGame().getSelectedLetters().put(indexOfLetter,String.valueOf(letter));
 
-            if(wordList.contains(String.valueOf(letter))){
-                return false;
-            }
-
-
             System.out.println(wordList);
             return true;
         }else{

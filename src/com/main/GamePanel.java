@@ -43,7 +43,9 @@ public class GamePanel extends JPanel {
         if(currentGame.getWord() == null)
             currentGame.setWord(getRandomWord(currentGame.getWordListLocation()));
 
-        currentGame.setChances(currentGame.getWord().length()/2);
+        System.out.println("LOADING chanced: "+currentGame.getChances());
+        if(currentGame.getChances() <= 0)
+            currentGame.setChances(currentGame.getWord().length()/2);
 
         this.setBackground(currentGame.getBgColor());
 
@@ -62,7 +64,7 @@ public class GamePanel extends JPanel {
         this.add(new WordPanel(currentGame.getWord(), currentGame.getWord().length()));
         this.add(new LettersPanel());
         this.add(new AnswerPanel());
-        this.add(new ChancesPanel(currentGame.getChances()));
+        this.add(new ChancesPanel());
     }
 
     private String getRandomWord(String path){

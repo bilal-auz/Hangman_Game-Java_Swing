@@ -1,7 +1,6 @@
 package com.main.components.panels;
 
 import com.main.GamePanel;
-import com.main.components.Game;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,8 +27,6 @@ public class LettersPanel extends JPanel implements ActionListener{
         }
 
         for(String index: GamePanel.getCurrentGame().getSelectedLetters().values()){
-
-
             lettersBtn.get((int) index.charAt(0)).doClick();
         }
     }
@@ -38,8 +35,15 @@ public class LettersPanel extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         JButton btn = (JButton) e.getSource();
 
-        if(WordPanel.checkLetter(btn.getText().charAt(0))){
-            btn.setEnabled(false);
+
+        //OPTIMIZE...
+        //Check if pressed letter exists in the word and user has chances
+        //if wrong letter and have chance decrease one.
+        if(GamePanel.getCurrentGame().getChances() > 0 && WordPanel.checkLetter(btn.getText().charAt(0))){
+            btn.setEnabled(WordPanel.wordList.contains(String.valueOf(btn.getText().charAt(0))));
+        }else if(GamePanel.getCurrentGame().getChances() > 0){
+            GamePanel.getCurrentGame().setChances(GamePanel.getCurrentGame().getChances() - 1);
+            ChancesPanel.updateChance();
         }
     }
 }

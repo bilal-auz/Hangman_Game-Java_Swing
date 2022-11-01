@@ -1,14 +1,25 @@
 package com.main.components.panels;
 
+import com.main.GamePanel;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class ChancesPanel extends JPanel {
-    public ChancesPanel(int chances){
-//        this.setBackground(Color.green);
-        this.add(new JLabel("Remaining Chances: "+ chances));
+    static int chances;
+    static JLabel chancesLabel;
+    public ChancesPanel(){
+        chances = GamePanel.getCurrentGame().getChances();
+        initPanel();
+    }
+
+    private void initPanel(){
+        chancesLabel = new JLabel("Remaining Chances: "+ chances);
+        this.add(chancesLabel);
+    }
 
 
+    public static void updateChance(){
+        chancesLabel.setText("Remaining Chances: " + GamePanel.getCurrentGame().getChances());
     }
 
 
