@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -23,18 +24,30 @@ public class OptionPanel extends Panel {
     JPanel optionsParentPanel;
     JTextField locationTextField;
     JComboBox<String> colorComboBox;
-    HashMap<String, Color> colorMap;    //Key: Color name (Black). Value: awt.Color (Color.BLACK)
+
+    /*
+        1- colorMap: used to get the String name value of the awt.Color object
+        2- colorMapInverse: used to get the awt.Color object using the color String name
+     */
+    HashMap<Color, String> colorMap;    //Key: Color name (Black). Value: awt.Color (Color.BLACK)
+    HashMap<String, Color> colorMapInverse;    //Key: awt.Color (Color.BLACK) . Value: Color name (Black)
     Color selectedColor;
 
     public OptionPanel(JFrame parentFrame){
         this.parentFrame = parentFrame;
-        selectedFilePath = GamePanel.getCurrentGame().getWordListLocation();
+        selectedFilePath = GamePanel.getCurrentGame().getWordListLocation();;
 
         colorMap = new HashMap<>();
-        colorMap.put("White", Color.WHITE);
-        colorMap.put("Black", Color.BLACK);
-        colorMap.put("Cyan", Color.CYAN);
-        colorMap.put("Orange", Color.ORANGE);
+        colorMap.put(Color.WHITE, "White");
+        colorMap.put(Color.BLACK, "Black");
+        colorMap.put(Color.CYAN, "Cyan");
+        colorMap.put(Color.ORANGE, "Orange");
+
+        colorMapInverse = new HashMap<>();
+        for(Color colorKey: colorMap.keySet()){
+            String colorValue = colorMap.get(colorKey);
+            colorMapInverse.put(colorValue, colorKey);
+        }
 
         selectedColor = GamePanel.getCurrentGame().getBgColor();
 
@@ -77,10 +90,11 @@ public class OptionPanel extends Panel {
 
         colorComboBox = new JComboBox<>();
 
-        for (String colorKey: colorMap.keySet()) {
-            colorComboBox.addItem(colorKey);
+        for (String colorValue: colorMap.values()) {
+            colorComboBox.addItem(colorValue);
         }
-        colorComboBox.setSelectedIndex(0);
+
+        colorComboBox.setSelectedItem(colorMap.get(GamePanel.getCurrentGame().getBgColor()));
 
         colorPanel.add(colorComboBox);
 
@@ -124,17 +138,31 @@ public class OptionPanel extends Panel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //remove from here and add new action to the combox
-                //TEMP
-                selectedColor = colorMap.get(colorComboBox.getSelectedItem());
+                File newDatabaseFile = new File(locationTextField.getText());
+                try{
+                    //check if the selected database location is exists
+                    //if exists, check if its empty.
+                    if(!newDatabaseFile.exists() || newDatabaseFile.length() <= 0)
+                        throw new Exception("The File doesn't exists/File empty");
 
-                //encase the file path changed
-                //init new Game with new filePath to the desired word list
-                parentFrame.getContentPane().removeAll();
-                Game newGame = new Game(selectedColor, selectedFilePath);
-                parentFrame.add(new GamePanel(newGame));
+                    selectedFilePath = locationTextField.getText();
+                    selectedColor = colorMapInverse.get(colorComboBox.getSelectedItem());
 
-                parentFrame.validate();
-                parentFrame.repaint();
+                    //encase the file path changed
+                    //init new Game with new filePath to the desired word list
+                    parentFrame.getContentPane().removeAll();
+
+                    Game newGame = new Game(selectedColor, selectedFilePath);
+                    parentFrame.add(new GamePanel(newGame));
+                }catch (Exception exception){
+                    //reset the DB location textField to the original
+                    locationTextField.setText(GamePanel.getCurrentGame().getWordListLocation());
+                    JOptionPane.showMessageDialog(null, "Can't Apply the new changes.\n"+exception.getMessage(), "Warning", JOptionPane.INFORMATION_MESSAGE);
+                }finally {
+                    //finally refresh the main game frame.
+                    parentFrame.validate();
+                    parentFrame.repaint();
+                }
             }
         });
 

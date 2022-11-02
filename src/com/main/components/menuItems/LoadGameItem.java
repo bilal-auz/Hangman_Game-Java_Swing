@@ -35,7 +35,7 @@ public class LoadGameItem extends MenuItem {
             parentFrame.repaint();
 
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error While Reading the Game Save File", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

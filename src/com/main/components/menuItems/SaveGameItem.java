@@ -26,7 +26,7 @@ public class SaveGameItem extends MenuItem {
         try{
             Game.serialize(selectedFile);
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Warning", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

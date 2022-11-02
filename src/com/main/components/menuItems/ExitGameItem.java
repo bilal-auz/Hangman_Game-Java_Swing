@@ -29,9 +29,8 @@ public class ExitGameItem extends MenuItem{
                 }catch (Exception e){
                     JOptionPane.showMessageDialog(null, e.getMessage());
                 }
-            }else{
-                System.exit(0);
             }
+            System.exit(0); //Exit the game whether the user chose to save or not
         }
     }
 }
