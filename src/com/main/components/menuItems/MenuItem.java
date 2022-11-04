@@ -8,36 +8,10 @@ import java.io.File;
 
 abstract public class MenuItem extends JMenuItem implements ActionListener {
     //method that implement each Item function
-    abstract void implementation();
-
-    //create frame method
-//    static JFrame createFrame(String title, int width, int height){
-//        JFrame frame = new JFrame();
-//
-//        frame.setTitle(title);
-//        frame.setPreferredSize(new Dimension(width, height));
-//        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-//
-//        frame.pack();
-//        frame.setResizable(false);
-//        frame.setVisible(true);
-//        frame.setLocationRelativeTo(null);
-//
-//        return frame;
-//    }
-//
-//    //create panel method
-//    static JPanel createPanel(){
-//        JPanel panel = new JPanel();
-//
-//        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-//        panel.setVisible(true);
-//
-//        return panel;
-//    }
+    abstract void implement();
 
     //file chooser component to be used by menu items
-    public static File openFileChooser(String title, String [] extensions){
+    public static File openFileChooser(String title, String[] extensions){
         JFileChooser newGameFileChooser = new JFileChooser();
         String selectedFilePath;
         File selectedFile;
@@ -76,7 +50,7 @@ abstract public class MenuItem extends JMenuItem implements ActionListener {
     //each instance(Menu Item) has ActionListener that triggers the Menu Item implementation();
     @Override
     public void actionPerformed(ActionEvent e) {
-        implementation();
+        implement();
     }
 
 }

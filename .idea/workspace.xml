@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f89ef71a-7e56-4ccd-9f05-aaca364b02bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/ExitGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/ExitGameItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/LoadGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/LoadGameItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/NewGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/NewGameItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/OptionGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/OptionGameItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/menuItems/SaveGameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/menuItems/SaveGameItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/LettersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/LettersPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/OptionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/OptionPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/components/panels/WordPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/components/panels/WordPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +92,10 @@
       <workItem from="1667148206209" duration="2607000" />
       <workItem from="1667199651935" duration="41368000" />
       <workItem from="1667329089924" duration="13311000" />
-      <workItem from="1667373637127" duration="9835000" />
+      <workItem from="1667373637127" duration="10509000" />
+      <workItem from="1667387285986" duration="258000" />
+      <workItem from="1667396087289" duration="3285000" />
+      <workItem from="1667469662747" duration="16051000" />
     </task>
     <servers />
   </component>

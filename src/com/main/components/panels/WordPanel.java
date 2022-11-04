@@ -30,8 +30,11 @@ public class WordPanel extends Panel {
         //init the labels
         for (int i =0; i < labels.length; i++){
             labels[i] = new JLabel();
-            labels[i].setPreferredSize(new Dimension(20,20));
-            labels[i].setBorder(BorderFactory.createLineBorder(Color.blue));
+            labels[i].setPreferredSize(new Dimension(50,50));
+            labels[i].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            labels[i].setHorizontalAlignment(SwingConstants.CENTER);
+            labels[i].setBackground(Color.WHITE);
+            labels[i].setFont(new Font("Serif",Font.PLAIN ,30));
             this.add(labels[i]);
         }
     }

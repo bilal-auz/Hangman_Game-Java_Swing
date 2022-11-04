@@ -118,6 +118,7 @@ public class OptionPanel extends Panel {
         changeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //accessing MenuItem static function is not a good implementation, but it solves the problem :)
                 File selectedDatabase = MenuItem.openFileChooser("Choose Database", extensions);
 
                 System.out.println("Old selectedFile: "+ GamePanel.getCurrentGame().getWordListLocation());
@@ -137,27 +138,33 @@ public class OptionPanel extends Panel {
         applyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //remove from here and add new action to the combox
-                File newDatabaseFile = new File(locationTextField.getText());
+                File newDatabaseFile;
+                Game newGame;
                 try{
-                    //check if the selected database location is exists
-                    //if exists, check if its empty.
-                    if(!newDatabaseFile.exists() || newDatabaseFile.length() <= 0)
-                        throw new Exception("The File doesn't exists/File empty");
-
-                    selectedFilePath = locationTextField.getText();
                     selectedColor = colorMapInverse.get(colorComboBox.getSelectedItem());
+                    //remove from here and add new action to the combox
+                    if(!selectedFilePath.equals(GamePanel.getCurrentGame().getWordListLocation())){
+                        newDatabaseFile = new File(locationTextField.getText());
+                        //check if the selected database location is exists
+                        //if exists, check if its empty.
+                        if(!newDatabaseFile.exists() || newDatabaseFile.length() <= 0)
+                            throw new Exception("The File doesn't exists/File empty");
+                        selectedFilePath = locationTextField.getText();
+
+                        newGame = new Game(selectedColor, selectedFilePath);
+                    }else{
+                        GamePanel.getCurrentGame().setBgColor(selectedColor);
+                        newGame = GamePanel.getCurrentGame();
+                    }
 
                     //encase the file path changed
                     //init new Game with new filePath to the desired word list
                     parentFrame.getContentPane().removeAll();
-
-                    Game newGame = new Game(selectedColor, selectedFilePath);
                     parentFrame.add(new GamePanel(newGame));
                 }catch (Exception exception){
                     //reset the DB location textField to the original
+                    JOptionPane.showMessageDialog(optionsParentPanel,"Can't Apply the new changes.\n"+exception.getMessage(),"Warning", JOptionPane.INFORMATION_MESSAGE);
                     locationTextField.setText(GamePanel.getCurrentGame().getWordListLocation());
-                    JOptionPane.showMessageDialog(null, "Can't Apply the new changes.\n"+exception.getMessage(), "Warning", JOptionPane.INFORMATION_MESSAGE);
                 }finally {
                     //finally refresh the main game frame.
                     parentFrame.validate();

@@ -15,19 +15,17 @@ import java.util.List;
 import java.util.Random;
 
 public class GamePanel extends JPanel {
-
     //panel WIDTH
     private static final int SCREEN_WIDTH = 720;
     //panel HEIGHT
     private static final int SCREEN_HEIGHT = 300;
     //panel Current Game
     private static Game currentGame;
-    private static final String defaultWordsPath = "src/words.db"; //Default path to the Words (.db)
-
+    private static final String DEFAULT_WORDS_PATH = "src/words.db"; //Default path to the Words (.db)
     //1st constructor for a new game
     public GamePanel(){
         //create new Game and pass it to the other constructor
-        this(new Game(defaultWordsPath));
+        this(new Game(DEFAULT_WORDS_PATH));
     }
 
     //2nd constructor for loading games
@@ -52,14 +50,13 @@ public class GamePanel extends JPanel {
             //setting chances
             currentGame.setChances(currentGame.getWord().length()/2);
         }
-
-        this.setBackground(currentGame.getBgColor());
     }
 
     public void initPanel(){
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBorder(new EmptyBorder(10, 10,10,10));
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBackground(currentGame.getBgColor());
 
         this.setFocusable(true);
 
@@ -86,7 +83,11 @@ public class GamePanel extends JPanel {
 
             return randWord;
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Error While Reading the Database File.", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane
+                    .showMessageDialog(null,
+                            "Error While Reading the Database File.",
+                            "Warning",
+                            JOptionPane.INFORMATION_MESSAGE);
         }
         return null;//if didn't get the word, it returns null
     }

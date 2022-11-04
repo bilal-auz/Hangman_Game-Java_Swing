@@ -18,7 +18,7 @@ public class OptionGameItem extends MenuItem{
 
     //calling the OptionPanel
     @Override
-    void implementation() {
+    void implement() {
         new OptionPanel(parentFrame);
     }
 }

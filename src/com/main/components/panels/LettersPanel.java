@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class LettersPanel extends Panel implements ActionListener{
 
-    //Key: character in ASCII. Value its button
+    //Key: integer value of character in ASCII. Value: JButton
     //Key is an Integer, so we can easily loop through them and initialize them in loop(i = 65 and i++);
     HashMap<Integer, JButton> lettersBtn = new HashMap<>();
 

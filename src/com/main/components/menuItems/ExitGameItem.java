@@ -16,7 +16,7 @@ public class ExitGameItem extends MenuItem{
 
     //ask if Sure to exit, and want to save.
     @Override
-    void implementation() {
+    void implement() {
         int selectedOption = JOptionPane.showConfirmDialog(null, "Are You Sure?", "Exit?",JOptionPane.YES_NO_OPTION);
         if(selectedOption == JOptionPane.YES_OPTION){
             int selectedSaveOption = JOptionPane.showConfirmDialog(null, "Do You Want To Save The Game?", "Save?",JOptionPane.YES_NO_OPTION);

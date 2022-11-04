@@ -19,7 +19,7 @@ public class LoadGameItem extends MenuItem {
     }
 
     //load(deserialize) the Game Object previously saved.
-    public void implementation(){
+    public void implement(){
         //get the location of saved Game Object
         File selectedGameFile = openFileChooser("Load", extensions);
 

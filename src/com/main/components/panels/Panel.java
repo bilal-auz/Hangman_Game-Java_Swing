@@ -20,7 +20,6 @@ abstract public class Panel extends JPanel {
 
         return frame;
     }
-
     //create panel method
     static JPanel createPanel(){
         JPanel panel = new JPanel();

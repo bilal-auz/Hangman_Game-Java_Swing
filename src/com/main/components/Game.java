@@ -39,19 +39,9 @@ public class Game implements Serializable {
 
     //Read object from a file path passed.
     public static Game deserialize(File selectedGameFile) throws Exception{
-//        try{
-            FileInputStream gameFile = new FileInputStream(selectedGameFile);
-            ObjectInputStream objLoaded = new ObjectInputStream(gameFile);
-            return (Game) objLoaded.readObject();
-
-
-//            System.out.println("NEW WORD: "+ loadedGame.getWord());
-
-//        }catch (Exception e){
-//            //add exception Popup Jpanel
-//            return null;
-//        }
-
+        FileInputStream gameFile = new FileInputStream(selectedGameFile);
+        ObjectInputStream objLoaded = new ObjectInputStream(gameFile);
+        return (Game) objLoaded.readObject();
     }
 
     public String getWord() {

@@ -18,7 +18,7 @@ public class SaveGameItem extends MenuItem {
     }
 
     //Save(serialize) the current game instance;
-    public void implementation(){
+    public void implement(){
         //get the desired location(where to save the game object)
         File selectedFile = openFileChooser("Save", extensions);
 
@@ -26,7 +26,11 @@ public class SaveGameItem extends MenuItem {
         try{
             Game.serialize(selectedFile);
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(),"Warning", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane
+                    .showMessageDialog(null,
+                            e.getMessage(),
+                            "Warning",
+                            JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

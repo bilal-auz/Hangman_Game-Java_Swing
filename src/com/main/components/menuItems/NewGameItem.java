@@ -15,7 +15,7 @@ public class NewGameItem extends MenuItem {
     }
 
     //Reset the Game object by initialize new Panel
-    public void implementation(){
+    public void implement(){
         parentFrame.getContentPane().removeAll();
 
         parentFrame.add(new GamePanel());
